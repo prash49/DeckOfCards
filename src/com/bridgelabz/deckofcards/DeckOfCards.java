@@ -1,7 +1,6 @@
 package com.bridgelabz.deckofcards;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Scanner;
 
 public class DeckOfCards {
@@ -37,7 +36,7 @@ public class DeckOfCards {
     }
 
     private static void toDisplay(ArrayList<String> cardsDeck) {
-        System.out.println("Cards in Deck after shuffling:");
+        System.out.println("Cards in Deck ");
         for (String element : cardsDeck) {
             System.out.print("\t" + element);
         }
@@ -69,7 +68,7 @@ public class DeckOfCards {
         for (int i = 0; i < player; i++) {
             System.out.print("\nPlayer " + (i + 1) + " got cards:\n");
             for (int j = 0; j < 9; j++) {
-                System.out.print("\t" + storageDeck.get(i+j));
+                System.out.print("\t" + storageDeck.get(i+j*player));
             }
         }
         System.out.println();
