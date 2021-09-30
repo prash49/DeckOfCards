@@ -22,7 +22,7 @@ public class DeckOfCards {
         return cardsDeck;
     }
 
-    public static void toshuffle(ArrayList<String> cardsDeck, int player) {
+    public static ArrayList<String> toshuffle(ArrayList<String> cardsDeck, int player) {
         System.out.println("shuffling the cards before Distribution");
         ArrayList<String> temp = new ArrayList<String>();
         while (!cardsDeck.isEmpty()) {
@@ -33,6 +33,7 @@ public class DeckOfCards {
         cardsDeck = temp;
         toDisplay(cardsDeck);
         cardDistribution(cardsDeck, player);
+        return cardsDeck;
     }
 
     private static void toDisplay(ArrayList<String> cardsDeck) {
@@ -61,14 +62,14 @@ public class DeckOfCards {
     }
 
     private static void cardDistribution(ArrayList<String> cardsDeck, int player) {
-        ArrayList<String> storageDeck = new ArrayList<>();
-        for (int i = 0; i < cardsDeck.size(); i++) {
-            storageDeck.add(cardsDeck.get(i));
-        }
+//        ArrayList<String> storageDeck = new ArrayList<>();
+//        for (int i = 0; i < cardsDeck.size(); i++) {
+//            storageDeck.add(cardsDeck.get(i));
+//        }
         for (int i = 0; i < player; i++) {
             System.out.print("\nPlayer " + (i + 1) + " got cards:\n");
             for (int j = 0; j < 9; j++) {
-                System.out.print("\t" + storageDeck.get(i+j*player));
+                System.out.print("\t" + cardsDeck.get(i+j*player));
             }
         }
         System.out.println();
